@@ -55,3 +55,16 @@
 // console.log(isFullAge);
 
 // console.log(currentYear - 1991 > currentYear - 2001);
+
+const massMark = 79.8323;
+const heightMark = 1.8034;
+const massJohn = 92;
+const heightJohn = 1.95;
+
+const BMIMark = massMark / (heightMark * heightMark);
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+
+const markHigherBMI = BMIMark > BMIJohn;
+
+console.log(BMIMark, BMIJohn);
+console.log(markHigherBMI);
