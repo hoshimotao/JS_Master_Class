@@ -69,26 +69,72 @@
 // console.log(BMIMark, BMIJohn);
 // console.log(markHigherBMI);
 
+///////////////////////////////////
 // TEMPLATE LITERALS
+///////////////////////////////////
 
-const firstName = "Jimmy";
-const job = "Developer";
-const birthYear = 1991;
-const year = 2023;
+// const firstName = "Jimmy";
+// const job = "Developer";
+// const birthYear = 1991;
+// const year = 2023;
 
-const jimmy =
-  "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + ".";
+// const jimmy =
+//   "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + ".";
 
-const jimmyNew = `Hello, my name is ${firstName}, and I am a ${
-  year - birthYear
-} year old ${job}.`;
+// const jimmyNew = `Hello, my name is ${firstName}, and I am a ${
+//   year - birthYear
+// } year old ${job}.`;
 
-console.log(jimmy);
-console.log(jimmyNew);
+// console.log(jimmy);
+// console.log(jimmyNew);
 
 // use backticks normally so it's easier to inject variables if needed later on.
 
-console.log(`Strings
-on
-multiple
-lines`);
+// console.log(`Strings
+// on
+// multiple
+// lines`);
+
+///////////////////////////////////
+// IF/ELSE STATEMENTS
+///////////////////////////////////
+
+// const age = 13;
+// const isDrivingAge = age >= 18;
+
+// console.log(isDrivingAge);
+
+// IF ELSE STATEMENTS ARE A CONSIDERED A CONTROL STRUCTURE
+// if (isDrivingAge) {
+//   console.log("Sarah can start driving license");
+// } else {
+//   const yearsLeft = 18 - age;
+//   console.log(
+//     `Sarah is not old enough to drive. She must wait ${yearsLeft} years to apply.`
+//   );
+// }
+
+// const birthYear = 2002;
+// let century;
+// if (birthYear <= 2000) {
+//   century = 20;
+// } else {
+//   century = 21;
+// }
+
+// console.log(century);
+
+const massMark = 78;
+const heightMark = 1.69;
+const massJohn = 92;
+const heightJohn = 1.95;
+
+const BMIMark = massMark / (heightMark * heightMark);
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+console.log(BMIMark, BMIJohn);
+
+if (BMIMark > BMIJohn) {
+  console.log(`Mark's BMI (${BMIMark}) is higher than John's (${BMIJohn})!`);
+} else {
+  console.log(`John's BMI (${BMIJohn}) is higher than Mark's (${BMIMark})!`);
+}
