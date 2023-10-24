@@ -56,15 +56,39 @@
 
 // console.log(currentYear - 1991 > currentYear - 2001);
 
-const massMark = 79.8323;
-const heightMark = 1.8034;
-const massJohn = 92;
-const heightJohn = 1.95;
+// const massMark = 79.8323;
+// const heightMark = 1.8034;
+// const massJohn = 92;
+// const heightJohn = 1.95;
 
-const BMIMark = massMark / (heightMark * heightMark);
-const BMIJohn = massJohn / (heightJohn * heightJohn);
+// const BMIMark = massMark / (heightMark * heightMark);
+// const BMIJohn = massJohn / (heightJohn * heightJohn);
 
-const markHigherBMI = BMIMark > BMIJohn;
+// const markHigherBMI = BMIMark > BMIJohn;
 
-console.log(BMIMark, BMIJohn);
-console.log(markHigherBMI);
+// console.log(BMIMark, BMIJohn);
+// console.log(markHigherBMI);
+
+// TEMPLATE LITERALS
+
+const firstName = "Jimmy";
+const job = "Developer";
+const birthYear = 1991;
+const year = 2023;
+
+const jimmy =
+  "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + ".";
+
+const jimmyNew = `Hello, my name is ${firstName}, and I am a ${
+  year - birthYear
+} year old ${job}.`;
+
+console.log(jimmy);
+console.log(jimmyNew);
+
+// use backticks normally so it's easier to inject variables if needed later on.
+
+console.log(`Strings
+on
+multiple
+lines`);
