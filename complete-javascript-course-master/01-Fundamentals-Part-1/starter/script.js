@@ -162,3 +162,39 @@ let n = "1" + 1;
 let m = "baby" + 1;
 n = n - 1;
 console.log(m);
+
+// WANT TO BE CAREFUL WITH ADDING AND SUBTRACTING STRINGS? USE TYPEOF
+// TO ENSURE YOU ARE ADDING OR SUBTRACTING ETC WITH TYPEOF NUMBER
+
+/////// 5 FALSEY VALUES ////////
+
+// 0, '', undefined, null, NaN
+
+// console.log(Boolean(0));
+// console.log(Boolean(""));
+// console.log(Boolean(undefined));
+// console.log(Boolean(null));
+// console.log(Boolean(NaN));
+// console.log(Boolean(1));
+// console.log(Boolean({}));
+
+// const money = 0;
+
+// if (money) {
+//   // if money is not 0 it is truthy and will execute the first block
+//   console.log("Don't spend it all!");
+//   console.log(Boolean(money));
+// } else {
+//   console.log("Get a job!");
+//   console.log(Boolean(money));
+// }
+
+// let height = 9;
+// if (height) {
+//   // if money is not 0 it is truthy and will execute the first block
+//   console.log(`height has a value of ${height}!`);
+//   console.log(Boolean(money));
+// } else {
+//   console.log("height is undefined!");
+//   console.log(Boolean(money));
+// }
