@@ -124,17 +124,41 @@
 
 // console.log(century);
 
-const massMark = 78;
-const heightMark = 1.69;
-const massJohn = 92;
-const heightJohn = 1.95;
+// const massMark = 80;
+// const heightMark = 1.69;
+// const massJohn = 92;
+// const heightJohn = 1.65;
 
-const BMIMark = massMark / (heightMark * heightMark);
-const BMIJohn = massJohn / (heightJohn * heightJohn);
-console.log(BMIMark, BMIJohn);
+// const BMIMark = massMark / (heightMark * heightMark);
+// const BMIJohn = massJohn / (heightJohn * heightJohn);
+// console.log(BMIMark, BMIJohn);
 
-if (BMIMark > BMIJohn) {
-  console.log(`Mark's BMI (${BMIMark}) is higher than John's (${BMIJohn})!`);
-} else {
-  console.log(`John's BMI (${BMIJohn}) is higher than Mark's (${BMIMark})!`);
-}
+// if (BMIMark > BMIJohn) {
+//   console.log(`Mark's BMI (${BMIMark}) is higher than John's (${BMIJohn})!`);
+// } else {
+//   console.log(`John's BMI (${BMIJohn}) is higher than Mark's (${BMIMark})!`);
+// }
+
+////////////// TYPE CONVERSION VS COERCION ///////////
+
+//// type conversion
+const inputYear = "1991";
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number("Jimmy"));
+console.log(typeof NaN);
+console.log(String(23), 23);
+
+//// type coercion
+console.log(`I am ` + 23 + ` years old.`);
+// js assumes its concatenating a string despite there being a number
+console.log(`23` - `10` - 3);
+// subtraction operators convert strings to numbers
+console.log(`23` * `10` * 3);
+// multiplication and division operators convert strings to numbers
+
+let n = "1" + 1;
+let m = "baby" + 1;
+n = n - 1;
+console.log(m);
