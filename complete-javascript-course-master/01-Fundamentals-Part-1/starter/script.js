@@ -142,26 +142,26 @@
 ////////////// TYPE CONVERSION VS COERCION ///////////
 
 //// type conversion
-const inputYear = "1991";
-console.log(Number(inputYear), inputYear);
-console.log(Number(inputYear) + 18);
+// const inputYear = "1991";
+// console.log(Number(inputYear), inputYear);
+// console.log(Number(inputYear) + 18);
 
-console.log(Number("Jimmy"));
-console.log(typeof NaN);
-console.log(String(23), 23);
+// console.log(Number("Jimmy"));
+// console.log(typeof NaN);
+// console.log(String(23), 23);
 
-//// type coercion
-console.log(`I am ` + 23 + ` years old.`);
-// js assumes its concatenating a string despite there being a number
-console.log(`23` - `10` - 3);
-// subtraction operators convert strings to numbers
-console.log(`23` * `10` * 3);
-// multiplication and division operators convert strings to numbers
+// //// type coercion
+// console.log(`I am ` + 23 + ` years old.`);
+// // js assumes its concatenating a string despite there being a number
+// console.log(`23` - `10` - 3);
+// // subtraction operators convert strings to numbers
+// console.log(`23` * `10` * 3);
+// // multiplication and division operators convert strings to numbers
 
-let n = "1" + 1;
-let m = "baby" + 1;
-n = n - 1;
-console.log(m);
+// let n = "1" + 1;
+// let m = "baby" + 1;
+// n = n - 1;
+// console.log(m);
 
 // WANT TO BE CAREFUL WITH ADDING AND SUBTRACTING STRINGS? USE TYPEOF
 // TO ENSURE YOU ARE ADDING OR SUBTRACTING ETC WITH TYPEOF NUMBER
@@ -197,4 +197,33 @@ console.log(m);
 // } else {
 //   console.log("height is undefined!");
 //   console.log(Boolean(money));
+// }
+
+///////// Equality Operators /////////
+
+// const age = "18";
+
+// if (age == 18) {
+//   console.log(`user is of age`);
+// } else {
+//   console.log(`user is not old enough`);
+// }
+
+// console.log("18" == 18); // value must match AVOID USING THIS OPERATOR
+// console.log("18" === 18); // type and value must match exactly
+
+// const favorite = Number(prompt(`What's your favorite number?`));
+// console.log(favorite);
+// console.log(typeof favorite);
+
+// // if (favorite === 23) {
+// //   console.log(`Cool! 23 is an awesome number!`);
+// // } else if (favorite === 7) {
+// //   console.log(`Cool! 7 is an awesome number!`);
+// // } else {
+// //   console.log(`That number is not 23 or 7!`);
+// // }
+
+// if (favorite !== 23) {
+//   console.log(`Why not 23?`);
 // }
