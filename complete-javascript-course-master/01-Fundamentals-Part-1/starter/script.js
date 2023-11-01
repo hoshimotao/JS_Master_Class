@@ -227,3 +227,13 @@
 // if (favorite !== 23) {
 //   console.log(`Why not 23?`);
 // }
+
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+const isTired = true; // C
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+  console.log("Sarah can drive!");
+} else {
+  console.log("Sarah needs glasses and a license to drive..");
+}
