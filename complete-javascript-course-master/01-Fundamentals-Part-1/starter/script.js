@@ -228,12 +228,23 @@
 //   console.log(`Why not 23?`);
 // }
 
-const hasDriversLicense = true; // A
-const hasGoodVision = true; // B
-const isTired = true; // C
+// const hasDriversLicense = true; // A
+// const hasGoodVision = true; // B
+// const isTired = true; // C
 
-if (hasDriversLicense && hasGoodVision && !isTired) {
-  console.log("Sarah can drive!");
+// if (hasDriversLicense && hasGoodVision && !isTired) {
+//   console.log("Sarah can drive!");
+// } else {
+//   console.log("Sarah needs glasses and a license to drive..");
+// }
+
+// const scoreDolphins = (96 + 108 + 89) / 3;
+// const scoreKoalas  = (88 + 91 + 110) / 3;
+
+if (scoreDolphins === scoreKoalas) {
+  console.log("Both win the trophy");
+} else if (scoreDolphins > scoreKoalas) {
+  console.log("Dolphins win the trophy");
 } else {
-  console.log("Sarah needs glasses and a license to drive..");
+  console.log("Koalas win the trophy");
 }
