@@ -238,13 +238,21 @@
 //   console.log("Sarah needs glasses and a license to drive..");
 // }
 
-// const scoreDolphins = (96 + 108 + 89) / 3;
-// const scoreKoalas  = (88 + 91 + 110) / 3;
+const scoreDolphins = (76 + 108 + 111) / 3;
+const scoreKoalas = (76 + 108 + 89) / 3;
 
-if (scoreDolphins === scoreKoalas) {
+console.log("D", scoreDolphins, "K", scoreKoalas);
+
+if (
+  scoreDolphins === scoreKoalas &&
+  scoreDolphins >= 100 &&
+  scoreKoalas >= 100
+) {
   console.log("Both win the trophy");
-} else if (scoreDolphins > scoreKoalas) {
+} else if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
   console.log("Dolphins win the trophy");
-} else {
+} else if (scoreKoalas > scoreDolphins && scoreKoalas >= 100) {
   console.log("Koalas win the trophy");
+} else {
+  console.log("Nobody wins a trophy");
 }
