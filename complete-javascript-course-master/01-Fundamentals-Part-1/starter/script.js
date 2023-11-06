@@ -238,21 +238,63 @@
 //   console.log("Sarah needs glasses and a license to drive..");
 // }
 
-const scoreDolphins = (76 + 108 + 111) / 3;
-const scoreKoalas = (76 + 108 + 89) / 3;
+// const scoreDolphins = (76 + 108 + 111) / 3;
+// const scoreKoalas = (76 + 108 + 89) / 3;
 
-console.log("D", scoreDolphins, "K", scoreKoalas);
+// console.log("D", scoreDolphins, "K", scoreKoalas);
 
-if (
-  scoreDolphins === scoreKoalas &&
-  scoreDolphins >= 100 &&
-  scoreKoalas >= 100
-) {
-  console.log("Both win the trophy");
-} else if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
-  console.log("Dolphins win the trophy");
-} else if (scoreKoalas > scoreDolphins && scoreKoalas >= 100) {
-  console.log("Koalas win the trophy");
+// if (
+//   scoreDolphins === scoreKoalas &&
+//   scoreDolphins >= 100 &&
+//   scoreKoalas >= 100
+// ) {
+//   console.log("Both win the trophy");
+// } else if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
+//   console.log("Dolphins win the trophy");
+// } else if (scoreKoalas > scoreDolphins && scoreKoalas >= 100) {
+//   console.log("Koalas win the trophy");
+// } else {
+//   console.log("Nobody wins a trophy");
+// }
+
+// SWITCH STATEMENTS
+
+const day = "thursday";
+
+// switch (day) {
+//   case "monday":
+//     console.log("Plan course structure");
+//     console.log("Go to coding meetup");
+//     break;
+
+//   case "tuesday":
+//     console.log("tuesday plan");
+//     break;
+
+//   case "wednesday":
+//   case "thursday":
+//     console.log("wednesday & thursday plan");
+//     break;
+
+//   case "friday":
+//     console.log("friday plan");
+//     break;
+
+//   case "saturday":
+//   case "sunday":
+//     console.log("Enjoy the weekend!");
+//     break;
+//   default:
+//     console.log("not a valid day");
+// }
+
+if (day === "monday") {
+  console.log("Plan course structure");
+  console.log("Go to coding meetup");
+} else if (day === "tuesday") {
+  console.log("tuesday plan");
+} else if (day === "wednesday" || day === "thursday") {
+  console.log("wednesday and thursday plan");
 } else {
-  console.log("Nobody wins a trophy");
+  console.log("unknown plan");
 }
