@@ -288,13 +288,51 @@ const day = "thursday";
 //     console.log("not a valid day");
 // }
 
-if (day === "monday") {
-  console.log("Plan course structure");
-  console.log("Go to coding meetup");
-} else if (day === "tuesday") {
-  console.log("tuesday plan");
-} else if (day === "wednesday" || day === "thursday") {
-  console.log("wednesday and thursday plan");
-} else {
-  console.log("unknown plan");
-}
+// if (day === "monday") {
+//   console.log("Plan course structure");
+//   console.log("Go to coding meetup");
+// } else if (day === "tuesday") {
+//   console.log("tuesday plan");
+// } else if (day === "wednesday" || day === "thursday") {
+//   console.log("wednesday and thursday plan");
+// } else {
+//   console.log("unknown plan");
+// }
+
+// STATEMENTS AND EXPRESSIONS
+// example: 3+4, 1991, true && false && !false are all
+// expressions
+// example of statement: if(a===b){ do something }else{do else}
+// const str = 'monday'; is a statement - like a sentence
+
+// THE CONDITIONAL (TERNARY) OPERATOR
+
+// const age = 18;
+// age >= 18
+//   ? console.log("You can drink wine.")
+//   : console.log("You cannot drink wine.");
+
+// const drink = age >= 18 ? "wine" : "water";
+// console.log(drink);
+
+// LONG WAY
+// let drink2;
+// if (age >= 18) {
+//   drink2 = "wine";
+// } else {
+//   drink2 = "water";
+// }
+// console.log(`I like to drink ${drink2}.`);
+
+// Can be used in a template literal
+
+// console.log(`I like to drink ${age >= 18 ? "wine" : "water"}.`);
+
+// CODING CHALLENGE USING TERNARY OPERATOR
+// const bill = 51.39;
+// let tip;
+
+// bill >= 50 && bill <= 300 ? (tip = bill * 0.15) : (tip = bill * 0.2);
+// console.log(
+//   `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`
+// );
