@@ -39,24 +39,43 @@
 
 // console.log(Number("23"));
 
-function myAge(years) {
-  const yearsOld = `Hello, I am ${years} years old`;
-  return yearsOld;
+// function myAge(years) {
+//   const yearsOld = `Hello, I am ${years} years old`;
+//   return yearsOld;
+// }
+
+// function herAge(years) {
+//   const yearsOld = `she is ${years} years old.`;
+//   return yearsOld;
+// }
+
+// const howOldAreYou = `${myAge(32)} and ${herAge(22)}`;
+
+// function combinedAge(bothAges, age1, age2) {
+//   const combinedAges = `${bothAges} Together we are ${age1 + age2}`;
+//   return combinedAges;
+// }
+
+// const agesCombined = combinedAge(howOldAreYou, 32, 22);
+
+// console.log(howOldAreYou);
+// console.log(agesCombined);
+
+///////////////////////////////
+
+// DECLARATION VS EXPRESSION
+
+// Declaraction
+
+const age1 = calcAge1(1991); // can be called before function is defined
+
+function calcAge1(birthYear) {
+  return 2023 - birthYear;
 }
 
-function herAge(years) {
-  const yearsOld = `she is ${years} years old.`;
-  return yearsOld;
-}
-
-const howOldAreYou = `${myAge(32)} and ${herAge(22)}`;
-
-function combinedAge(bothAges, age1, age2) {
-  const combinedAges = `${bothAges} Together we are ${age1 + age2}`;
-  return combinedAges;
-}
-
-const agesCombined = combinedAge(howOldAreYou, 32, 22);
-
-console.log(howOldAreYou);
-console.log(agesCombined);
+// Expression
+const calcAge2 = function (birthYear) {
+  return 2023 - birthYear;
+};
+const age2 = calcAge2(1991); // // must be defined before calling function
+console.log(age1, age2);
