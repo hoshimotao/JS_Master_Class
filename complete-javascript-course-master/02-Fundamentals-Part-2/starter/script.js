@@ -84,14 +84,31 @@
 
 // ARROW FUNCTIONS
 // Cannot use 'this' keyword
-const calcAge3 = (birthYear) => 2023 - birthYear;
-const age3 = calcAge3(1991);
-console.log(age3);
+// const calcAge3 = (birthYear) => 2023 - birthYear;
+// const age3 = calcAge3(1991);
+// console.log(age3);
 
-const yearsTillRetirement = (birthYear, firstName) => {
-  const age = 2023 - birthYear;
-  const retirement = 65 - age;
-  return `${firstName} retires in ${retirement} years`;
-};
-console.log(yearsTillRetirement(1991, "Jimmy"));
-console.log(yearsTillRetirement(2001, "Colleen"));
+// const yearsTillRetirement = (birthYear, firstName) => {
+//   const age = 2023 - birthYear;
+//   const retirement = 65 - age;
+//   return `${firstName} retires in ${retirement} years`;
+// };
+// console.log(yearsTillRetirement(1991, "Jimmy"));
+// console.log(yearsTillRetirement(2001, "Colleen"));
+
+////////////////////////////////////////////
+
+// FUNCTIONS USING OTHER FUNCTIONS
+
+function cutFruitPieces(fruit) {
+  return fruit * 4;
+}
+
+function fruitProcessor(applesAmt, orangesAmt) {
+  const applePieces = cutFruitPieces(applesAmt); // 8
+  const orangesPieces = cutFruitPieces(orangesAmt); // 16
+  const juice = `Juice with ${applePieces} apple pieces and ${orangesPieces} orange pieces.`;
+  return juice;
+}
+
+console.log(fruitProcessor(2, 4));
