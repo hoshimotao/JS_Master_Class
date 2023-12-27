@@ -67,15 +67,31 @@
 
 // Declaraction
 
-const age1 = calcAge1(1991); // can be called before function is defined
+// const age1 = calcAge1(1991); // can be called before function is defined
 
-function calcAge1(birthYear) {
-  return 2023 - birthYear;
-}
+// function calcAge1(birthYear) {
+//   return 2023 - birthYear;
+// }
 
-// Expression
-const calcAge2 = function (birthYear) {
-  return 2023 - birthYear;
+// // Expression
+// const calcAge2 = function (birthYear) {
+//   return 2023 - birthYear;
+// };
+// const age2 = calcAge2(1991); // // must be defined before calling function
+// console.log(age1, age2);
+
+///////////////////////////////////////
+
+// ARROW FUNCTIONS
+// Cannot use 'this' keyword
+const calcAge3 = (birthYear) => 2023 - birthYear;
+const age3 = calcAge3(1991);
+console.log(age3);
+
+const yearsTillRetirement = (birthYear, firstName) => {
+  const age = 2023 - birthYear;
+  const retirement = 65 - age;
+  return `${firstName} retires in ${retirement} years`;
 };
-const age2 = calcAge2(1991); // // must be defined before calling function
-console.log(age1, age2);
+console.log(yearsTillRetirement(1991, "Jimmy"));
+console.log(yearsTillRetirement(2001, "Colleen"));
