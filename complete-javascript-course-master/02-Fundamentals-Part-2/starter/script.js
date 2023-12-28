@@ -117,20 +117,54 @@
 
 // FUNCTIONS REVIEW
 
-const calcAge = function (year) {
-  return 2023 - year;
+// const calcAge = function (year) {
+//   return 2023 - year;
+// };
+
+// const yearsTillRetirement = function (birthYear, firstName) {
+//   const age = calcAge(birthYear);
+//   const retirement = 65 - age;
+
+//   if (retirement > 0) {
+//     return `${firstName} retires in ${retirement} years`;
+//   } else {
+//     return `${firstName} is retired.`;
+//   }
+// };
+
+// console.log(yearsTillRetirement(1991, "Jimmy"));
+// console.log(yearsTillRetirement(1955, "Jim"));
+
+const calcAverage = (param1, param2, param3) => {
+  const avgScore = (param1 + param2 + param3) / 3;
+  return avgScore;
 };
 
-const yearsTillRetirement = function (birthYear, firstName) {
-  const age = calcAge(birthYear);
-  const retirement = 65 - age;
+const scoreDolphins = calcAverage(44, 23, 71);
+const scoreDolphins2 = calcAverage(85, 54, 41);
+const scoreKoalas = calcAverage(65, 54, 49);
+const scoreKoalas2 = calcAverage(23, 34, 27);
 
-  if (retirement > 0) {
-    return `${firstName} retires in ${retirement} years`;
-  } else {
-    return `${firstName} is retired.`;
+console.log(scoreDolphins, scoreKoalas);
+console.log(scoreDolphins2, scoreKoalas2);
+
+function checkWinner(avgDolphins, avgKoalas) {
+  if (avgDolphins >= avgKoalas * 2) {
+    console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+    return `Dolphins win (${avgDolphins} vs. ${avgKoalas})`;
   }
-};
+  if (avgKoalas >= avgDolphins * 2) {
+    console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins}`);
+    return `Koalas win (${avgKoalas} vs. ${avgDolphins}`;
+  }
+  if (avgKoalas == avgDolphins) {
+    console.log(`No team wins...`);
+    return `No team wins...`;
+  } else {
+    console.log(`No team wins...`);
+    return `No team wins...`;
+  }
+}
 
-console.log(yearsTillRetirement(1991, "Jimmy"));
-console.log(yearsTillRetirement(1955, "Jim"));
+checkWinner(scoreDolphins, scoreKoalas);
+checkWinner(scoreDolphins2, scoreKoalas2);
