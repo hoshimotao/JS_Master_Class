@@ -166,42 +166,83 @@
 
 ///////////////////////////////////////////
 
-const friend1 = "Mike";
-const friend2 = "Jimmy";
-const friend3 = "Donna";
+// const friend1 = "Mike";
+// const friend2 = "Jimmy";
+// const friend3 = "Donna";
+
+// const friends = ["Mike", "Jimmy", "Donna"];
+
+// console.log(friends);
+
+// // const years = new Array(1991, 2001, 1990);
+// // console.log(years);
+// console.log(friends.length);
+// console.log(friends[friends.length - 1]);
+// // target the last element in an array ^
+
+// friends[2] = "Joe";
+// // you cannot assign an entire array but can mutate the elements
+// console.log(friends);
+
+// const firstName = "Jimmy";
+// const jimmy = [firstName, "Thomas", 2023 - 1991, "programmer", friends]; // arrays accept expressions
+// console.log(jimmy);
+
+// // EXERCISE
+
+// const calcAge = function (birthYear) {
+//   return 2023 - birthYear;
+// };
+// const years = [1990, 1967, 2002, 2010, 2018];
+// const age1 = calcAge(years[0]);
+// const age2 = calcAge(years[1]);
+// const age3 = calcAge(years[years.length - 1]);
+// console.log(age1, age2, age3);
+
+// const ages = [
+//   calcAge(years[0]),
+//   calcAge(years[1]),
+//   calcAge(years[years.length - 1]),
+// ];
+// console.log(ages);
+
+///////////////////////////////////////////
+
+// ARRAY METHODS
+
+///////////////////////////////////////////
 
 const friends = ["Mike", "Jimmy", "Donna"];
 
+// ADD ELEMENTS
+
+friends.push("Taylor");
+const newLength = friends.push(1 + 2); // Returns a value --> 5
+console.log(friends);
+console.log(newLength);
+friends.unshift("John"); // adds named element to beginning of array
 console.log(friends);
 
-// const years = new Array(1991, 2001, 1990);
-// console.log(years);
-console.log(friends.length);
-console.log(friends[friends.length - 1]);
-// target the last element in an array ^
+// REMOVE ELEMENTS
 
-friends[2] = "Joe";
-// you cannot assign an entire array but can mutate the elements
+friends.pop(); // remove last element
+console.log(friends);
+const poppedElement = friends.pop(); // Returns the removed element
+console.log(poppedElement);
+console.log(friends);
+friends.shift(); // removes first element from array
 console.log(friends);
 
-const firstName = "Jimmy";
-const jimmy = [firstName, "Thomas", 2023 - 1991, "programmer", friends]; // arrays accept expressions
-console.log(jimmy);
+// FIND AN ELEMENT IN AN ARRAY
 
-// EXERCISE
+console.log(friends.indexOf("Mike")); // 0th element
+console.log(friends.includes("Jimmy"));
+// true - the array contains this element
+console.log(friends.includes("Joey"));
+// false - the array does not contain this element
+friends.push(23);
+console.log(friends.includes("23")); // false - must be exact match
 
-const calcAge = function (birthYear) {
-  return 2023 - birthYear;
-};
-const years = [1990, 1967, 2002, 2010, 2018];
-const age1 = calcAge(years[0]);
-const age2 = calcAge(years[1]);
-const age3 = calcAge(years[years.length - 1]);
-console.log(age1, age2, age3);
-
-const ages = [
-  calcAge(years[0]),
-  calcAge(years[1]),
-  calcAge(years[years.length - 1]),
-];
-console.log(ages);
+if (friends.includes("Jimmy")) {
+  console.log(`You have a friend named ${friends[1]}`);
+}
