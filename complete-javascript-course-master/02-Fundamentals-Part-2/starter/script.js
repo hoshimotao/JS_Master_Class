@@ -212,37 +212,61 @@
 
 ///////////////////////////////////////////
 
-const friends = ["Mike", "Jimmy", "Donna"];
+// const friends = ["Mike", "Jimmy", "Donna"];
 
-// ADD ELEMENTS
+// // ADD ELEMENTS
 
-friends.push("Taylor");
-const newLength = friends.push(1 + 2); // Returns a value --> 5
-console.log(friends);
-console.log(newLength);
-friends.unshift("John"); // adds named element to beginning of array
-console.log(friends);
+// friends.push("Taylor");
+// const newLength = friends.push(1 + 2); // Returns a value --> 5
+// console.log(friends);
+// console.log(newLength);
+// friends.unshift("John"); // adds named element to beginning of array
+// console.log(friends);
 
-// REMOVE ELEMENTS
+// // REMOVE ELEMENTS
 
-friends.pop(); // remove last element
-console.log(friends);
-const poppedElement = friends.pop(); // Returns the removed element
-console.log(poppedElement);
-console.log(friends);
-friends.shift(); // removes first element from array
-console.log(friends);
+// friends.pop(); // remove last element
+// console.log(friends);
+// const poppedElement = friends.pop(); // Returns the removed element
+// console.log(poppedElement);
+// console.log(friends);
+// friends.shift(); // removes first element from array
+// console.log(friends);
 
-// FIND AN ELEMENT IN AN ARRAY
+// // FIND AN ELEMENT IN AN ARRAY
 
-console.log(friends.indexOf("Mike")); // 0th element
-console.log(friends.includes("Jimmy"));
-// true - the array contains this element
-console.log(friends.includes("Joey"));
-// false - the array does not contain this element
-friends.push(23);
-console.log(friends.includes("23")); // false - must be exact match
+// console.log(friends.indexOf("Mike")); // 0th element
+// console.log(friends.includes("Jimmy"));
+// // true - the array contains this element
+// console.log(friends.includes("Joey"));
+// // false - the array does not contain this element
+// friends.push(23);
+// console.log(friends.includes("23")); // false - must be exact match
 
-if (friends.includes("Jimmy")) {
-  console.log(`You have a friend named ${friends[1]}`);
-}
+// if (friends.includes("Jimmy")) {
+//   console.log(`You have a friend named ${friends[1]}`);
+// }
+
+// CHALLENGE #2
+// Steven wants you to improve his tip calculator, using the same rules as before — tip 15% of the bill if the bill value is between 50 and 300, and if the value is different, the tip is 20%.
+
+// Your tasks:
+
+// Write a function calcTip that takes any bill value as an input and returns the corresponding tip, calculated based on the rules above (you can check out the code from the first tip calculator challenge if you need to). Use the function type you like the most. Test the function using a bill value of 100.
+
+// And now let's use arrays! So, create an array called bills containing the test data below.
+
+// Create an array called tips containing the tip value for each bill, calculated from the function you created before.
+
+// BONUS: Create an array totals containing the total values, so the bill + tip.
+
+// TEST DATA: 125, 555, and 44.
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+const bills = [123, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+calcTip(100);
+console.log(totals);
