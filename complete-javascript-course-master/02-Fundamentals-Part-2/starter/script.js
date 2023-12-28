@@ -135,36 +135,73 @@
 // console.log(yearsTillRetirement(1991, "Jimmy"));
 // console.log(yearsTillRetirement(1955, "Jim"));
 
-const calcAverage = (param1, param2, param3) => {
-  const avgScore = (param1 + param2 + param3) / 3;
-  return avgScore;
+// const calcAverage = (param1, param2, param3) => {
+//   return (param1 + param2 + param3) / 3;
+// };
+
+// const scoreDolphins = calcAverage(44, 23, 71);
+// const scoreDolphins2 = calcAverage(85, 54, 41);
+// const scoreKoalas = calcAverage(65, 54, 49);
+// const scoreKoalas2 = calcAverage(23, 34, 27);
+
+// console.log(scoreDolphins, scoreKoalas);
+// console.log(scoreDolphins2, scoreKoalas2);
+
+// function checkWinner(avgDolphins, avgKoalas) {
+//   if (avgDolphins >= avgKoalas * 2) {
+//     console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+//   } else if (avgKoalas >= avgDolphins * 2) {
+//     console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins}`);
+//   } else {
+//     console.log(`No team wins...`);
+//   }
+// }
+
+// checkWinner(scoreDolphins, scoreKoalas);
+// checkWinner(scoreDolphins2, scoreKoalas2);
+
+///////////////////////////////////////////
+
+// ARRAYS
+
+///////////////////////////////////////////
+
+const friend1 = "Mike";
+const friend2 = "Jimmy";
+const friend3 = "Donna";
+
+const friends = ["Mike", "Jimmy", "Donna"];
+
+console.log(friends);
+
+// const years = new Array(1991, 2001, 1990);
+// console.log(years);
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+// target the last element in an array ^
+
+friends[2] = "Joe";
+// you cannot assign an entire array but can mutate the elements
+console.log(friends);
+
+const firstName = "Jimmy";
+const jimmy = [firstName, "Thomas", 2023 - 1991, "programmer", friends]; // arrays accept expressions
+console.log(jimmy);
+
+// EXERCISE
+
+const calcAge = function (birthYear) {
+  return 2023 - birthYear;
 };
+const years = [1990, 1967, 2002, 2010, 2018];
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3);
 
-const scoreDolphins = calcAverage(44, 23, 71);
-const scoreDolphins2 = calcAverage(85, 54, 41);
-const scoreKoalas = calcAverage(65, 54, 49);
-const scoreKoalas2 = calcAverage(23, 34, 27);
-
-console.log(scoreDolphins, scoreKoalas);
-console.log(scoreDolphins2, scoreKoalas2);
-
-function checkWinner(avgDolphins, avgKoalas) {
-  if (avgDolphins >= avgKoalas * 2) {
-    console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
-    return `Dolphins win (${avgDolphins} vs. ${avgKoalas})`;
-  }
-  if (avgKoalas >= avgDolphins * 2) {
-    console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins}`);
-    return `Koalas win (${avgKoalas} vs. ${avgDolphins}`;
-  }
-  if (avgKoalas == avgDolphins) {
-    console.log(`No team wins...`);
-    return `No team wins...`;
-  } else {
-    console.log(`No team wins...`);
-    return `No team wins...`;
-  }
-}
-
-checkWinner(scoreDolphins, scoreKoalas);
-checkWinner(scoreDolphins2, scoreKoalas2);
+const ages = [
+  calcAge(years[0]),
+  calcAge(years[1]),
+  calcAge(years[years.length - 1]),
+];
+console.log(ages);
