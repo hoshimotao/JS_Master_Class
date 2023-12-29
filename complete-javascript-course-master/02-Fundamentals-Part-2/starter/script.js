@@ -375,10 +375,13 @@ const john = {
   },
 };
 
+mark.calcBMI(); // mark.bmi does not exist until called
+john.calcBMI();
+
 console.log(
-  `${mark.calcBMI() > john.calcBMI() ? mark.fullName : john.fullName}'s BMI (${
-    mark.calcBMI() > john.calcBMI() ? mark.calcBMI() : john.calcBMI()
-  }) is higher than ${
-    mark.calcBMI() > john.calcBMI() ? john.fullName : mark.fullName
-  }'s (${mark.calcBMI() > john.calcBMI() ? john.calcBMI() : mark.calcBMI()})`
+  `${mark.bmi > john.bmi ? mark.fullName : john.fullName}'s BMI (${
+    mark.bmi > john.bmi ? mark.bmi : john.bmi
+  }) is higher than ${mark.bmi > john.bmi ? john.fullName : mark.fullName}'s (${
+    mark.bmi > john.bmi ? john.bmi : mark.bmi
+  })`
 );
