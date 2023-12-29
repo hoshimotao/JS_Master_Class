@@ -262,11 +262,95 @@
 
 // TEST DATA: 125, 555, and 44.
 
-const calcTip = function (bill) {
-  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-};
-const bills = [123, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-calcTip(100);
-console.log(totals);
+// const calcTip = function (bill) {
+//   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// };
+// const bills = [123, 555, 44];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+// calcTip(100);
+// console.log(totals);
+
+///////////////////////////////////////////
+
+// OBJECTS
+
+///////////////////////////////////////////
+
+// const jimmyArray = [
+//   "Jimmy",
+//   "Thomas",
+//   2023 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+// ];
+
+// const jimmy = {
+//   firstName: "Jimmy",
+//   lastName: "Thomas",
+//   age: 2023 - 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+// };
+
+// console.log(jimmy.firstName);
+// console.log(jimmy["lastName"]);
+
+// const nameKey = "Name";
+
+// console.log(jimmy["first" + nameKey]);
+// console.log(jimmy["last" + nameKey]);
+
+// // const interestedIn = prompt("what do you want to know about Jimmy?"); // saves the value to interestedIn
+
+// // if (jimmy[interestedIn]) {
+// //   console.log(jimmy[interestedIn]);
+// // } else {
+// //   console.log("Wrong request");
+// // }
+
+// // ADD PROPERTIES TO OBJECT
+// jimmy.location = "Florida";
+// jimmy["twitter"] = "@hoshi";
+// console.log(jimmy);
+
+// console.log(
+//   `${jimmy.firstName} has ${jimmy.friends.length} friends, and his best friend's name is ${jimmy.friends[0]}.`
+// );
+
+// const jimmy = {
+//   firstName: "Jimmy",
+//   lastName: "Thomas",
+//   birthYear: 1991,
+//   job: "teacher",
+//   friends: ["Mike", "Denise", "Steven"],
+//   hasDriversLicense: true,
+//   // calcAge: function (birthYear) {
+//   //   return 2023 - birthYear;
+//   // },
+
+//   // calcAge: function () {
+//   //   console.log(this);
+//   //   return 2023 - this.birthYear;
+//   //   // try not to hardcode the object that is calling the function so you don't repeat yourself because jimmy object could be renamed later
+//   // },
+//   calcAge: function () {
+//     this.age = 2023 - this.birthYear;
+//     return this.age;
+//   },
+//   // CHALLENGE - produce a summary of the object
+//   getSummary: function () {
+//     return `${this.firstName} is a ${this.calcAge()}-year old ${
+//       this.job
+//     }, and ${
+//       this.hasDriversLicense
+//         ? "he has a driver's license"
+//         : "he does not have a driver's license."
+//     }`;
+//   },
+// };
+
+// // console.log(jimmy.calcAge()); // this = jimmy obj
+// // console.log(jimmy.age);
+
+// console.log(jimmy.getSummary());
