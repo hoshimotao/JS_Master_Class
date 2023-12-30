@@ -432,25 +432,76 @@
 //   console.log(jimmyArray[i], typeof jimmyArray[i]);
 // }
 
-const jimmyArray = [
-  "Jimmy",
-  "Thomas",
-  2023 - 1991,
-  "teacher",
-  ["Michael", "Peter", "Steven"],
-];
+// const jimmyArray = [
+//   "Jimmy",
+//   "Thomas",
+//   2023 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+// ];
 
-// ----- REVERSE LOOP -----
+// // ----- REVERSE LOOP -----
 
-// for (let i = jimmyArray.length - 1; i >= 0; i--) {
-//   console.log(jimmyArray[i]);
+// // for (let i = jimmyArray.length - 1; i >= 0; i--) {
+// //   console.log(jimmyArray[i]);
+// // }
+
+// // ----- LOOP WITHIN A LOOP -----
+
+// for (let exercise = 1; exercise <= 3; exercise++) {
+//   console.log(`----- Starting exercise ${exercise}`);
+//   for (let rep = 1; rep <= 5; rep++) {
+//     console.log(`Exercise ${exercise}: Repetition count: ${rep}`);
+//   }
 // }
 
-// ----- LOOP WITHIN A LOOP -----
+// for (let rep = 1; rep < 11; rep++) {
+//   console.log(`Repetition: ${rep}`);
+// }
 
-for (let exercise = 1; exercise <= 3; exercise++) {
-  console.log(`----- Starting exercise ${exercise}`);
-  for (let rep = 1; rep <= 5; rep++) {
-    console.log(`Exercise ${exercise}: Repetition count: ${rep}`);
-  }
+// let rep = 1;
+// while (rep < 11) {
+//   console.log(rep);
+//   rep++;
+// }
+
+// let dice = Math.trunc(Math.random() * 6) + 1;
+
+// while (dice !== 6) {
+//   console.log(`You rolled a ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   if (dice === 6) {
+//     console.log(`You rolled a 6!`);
+//   }
+// }
+
+// CODING CHALLENGE #4
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+let tips = [];
+let totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
 }
+console.log(bills, tips, totals);
+
+const calcAverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    // sum = sum + arr[i];
+    sum += arr[i];
+  }
+  console.log(sum);
+  return sum / arr.length;
+};
+
+console.log(calcAverage(totals));
+// console.log(calcAverage([2, 4, 6]));
