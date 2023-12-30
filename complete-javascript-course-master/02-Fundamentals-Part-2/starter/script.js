@@ -355,33 +355,102 @@
 
 // console.log(jimmy.getSummary());
 
-const mark = {
-  fullName: "Mark Miller",
-  mass: 78,
-  height: 1.69,
-  calcBMI: function () {
-    this.bmi = this.mass / (this.height * this.height);
-    return this.bmi;
-  },
-};
+// const mark = {
+//   fullName: "Mark Miller",
+//   mass: 78,
+//   height: 1.69,
+//   calcBMI: function () {
+//     this.bmi = this.mass / (this.height * this.height);
+//     return this.bmi;
+//   },
+// };
 
-const john = {
-  fullName: "John Smith",
-  mass: 92,
-  height: 1.95,
-  calcBMI: function () {
-    this.bmi = this.mass / (this.height * this.height);
-    return this.bmi;
-  },
-};
+// const john = {
+//   fullName: "John Smith",
+//   mass: 92,
+//   height: 1.95,
+//   calcBMI: function () {
+//     this.bmi = this.mass / (this.height * this.height);
+//     return this.bmi;
+//   },
+// };
 
-mark.calcBMI(); // mark.bmi does not exist until called
-john.calcBMI();
+// mark.calcBMI(); // mark.bmi does not exist until called
+// john.calcBMI();
 
-console.log(
-  `${mark.bmi > john.bmi ? mark.fullName : john.fullName}'s BMI (${
-    mark.bmi > john.bmi ? mark.bmi : john.bmi
-  }) is higher than ${mark.bmi > john.bmi ? john.fullName : mark.fullName}'s (${
-    mark.bmi > john.bmi ? john.bmi : mark.bmi
-  })`
-);
+// console.log(
+//   `${mark.bmi > john.bmi ? mark.fullName : john.fullName}'s BMI (${
+//     mark.bmi > john.bmi ? mark.bmi : john.bmi
+//   }) is higher than ${mark.bmi > john.bmi ? john.fullName : mark.fullName}'s (${
+//     mark.bmi > john.bmi ? john.bmi : mark.bmi
+//   })`
+// );
+
+///////////////////////////////////////////
+
+// LOOPS
+
+///////////////////////////////////////////
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Jimmy has done ${rep} reps`);
+// }
+
+// const jimmyArray = [
+//   "Jimmy",
+//   "Thomas",
+//   2023 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+// ];
+
+// const typesArray = [];
+
+// for (let rep = 0; rep < jimmyArray.length; rep++) {
+//   // add types of jimmyArray to the typesArray using for loop
+//   typesArray.push(typeof jimmyArray[rep]);
+//   // console.log(typesArray);
+// }
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2023 - years[i]);
+// }
+// // console.log(ages); //[32, 16, 54, 3]
+
+// console.log("----- ONLY STRINGS -----");
+// for (let i = 0; i < jimmyArray.length; i++) {
+//   if (typeof jimmyArray[i] !== "string") continue;
+//   console.log(jimmyArray[i], typeof jimmyArray[i]);
+// }
+
+// console.log("----- BREAK WITH NUMBER -----");
+// for (let i = 0; i < jimmyArray.length; i++) {
+//   if (typeof jimmyArray[i] === "number") break;
+//   console.log(jimmyArray[i], typeof jimmyArray[i]);
+// }
+
+const jimmyArray = [
+  "Jimmy",
+  "Thomas",
+  2023 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
+
+// ----- REVERSE LOOP -----
+
+// for (let i = jimmyArray.length - 1; i >= 0; i--) {
+//   console.log(jimmyArray[i]);
+// }
+
+// ----- LOOP WITHIN A LOOP -----
+
+for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`----- Starting exercise ${exercise}`);
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(`Exercise ${exercise}: Repetition count: ${rep}`);
+  }
+}
