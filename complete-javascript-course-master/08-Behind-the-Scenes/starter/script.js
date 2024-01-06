@@ -146,49 +146,66 @@
 
 // f(); // the 'this' keyword from the borrowed method points to undefined because there is no year in f function.
 
-var firstName = 'Matilda'; // global firstName
+// var firstName = 'Matilda'; // global firstName
 
-const jimmy = {
+// const jimmy = {
+//   firstName: 'Jimmy',
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(`Hey ${this.firstName}`); // refers to this (Jimmy)
+
+//     // const self = this;
+//     // // create a self variable if needed to reference the parent object's properties
+//     // const isMillenial = function () {
+//     //   console.log(self.year >= 1981 && self.year <= 1996); // RIGHT
+//     //   //   console.log(this.year >= 1981 && this.year <= 1996); WRONG
+
+//     const self = this; // simply assign this to self for use below
+
+//     const isMillenial = () => {
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//       // arrow function assumes your want parent of parent object 'this'
+//     };
+//     isMillenial(); // true
+//   },
+//   greet: () => console.log(`Hey ${this.firstName}`),
+//   // arrow function = undefined 'this' keyword
+//   // actually produces -> Window.firstName
+// };
+
+// jimmy.calcAge();
+// jimmy.greet();
+
+// // RULE - NEVER USE ARROW FUNCTION AS A METHOD
+
+// // Arguments keyword
+// const addExpression = function (a, b) {
+//   console.log(arguments); // shows arguments as an object with all args included, regardless if there enough parameters
+//   return a + b;
+// };
+
+// const addArrow = (a, b) => {
+//   console.log(`Arguments Arrow: `, arguments); // arguments is not defined
+//   return a + b;
+// };
+
+// addExpression(1, 2);
+// addExpression(1, 2, 3, 4);
+// addArrow(1, 2, 3);
+
+let age = 30;
+let oldAge = age;
+age = 32;
+// console.log(age);
+// console.log(oldAge);
+
+const me = {
   firstName: 'Jimmy',
-  year: 1991,
-  calcAge: function () {
-    console.log(`Hey ${this.firstName}`); // refers to this (Jimmy)
-
-    // const self = this;
-    // // create a self variable if needed to reference the parent object's properties
-    // const isMillenial = function () {
-    //   console.log(self.year >= 1981 && self.year <= 1996); // RIGHT
-    //   //   console.log(this.year >= 1981 && this.year <= 1996); WRONG
-
-    const self = this; // simply assign this to self for use below
-
-    const isMillenial = () => {
-      console.log(this.year >= 1981 && this.year <= 1996);
-      // arrow function assumes your want parent of parent object 'this'
-    };
-    isMillenial(); // true
-  },
-  greet: () => console.log(`Hey ${this.firstName}`),
-  // arrow function = undefined 'this' keyword
-  // actually produces -> Window.firstName
+  age: 32,
 };
 
-jimmy.calcAge();
-jimmy.greet();
-
-// RULE - NEVER USE ARROW FUNCTION AS A METHOD
-
-// Arguments keyword
-const addExpression = function (a, b) {
-  console.log(arguments); // shows arguments as an object with all args included, regardless if there enough parameters
-  return a + b;
-};
-
-const addArrow = (a, b) => {
-  console.log(`Arguments Arrow: `, arguments); // arguments is not defined
-  return a + b;
-};
-
-addExpression(1, 2);
-addExpression(1, 2, 3, 4);
-addArrow(1, 2, 3);
+const friend = me; // points to same address in MEMORY HEAP so changing props on friend will change them for me as well
+friend.age = 33; // friend.age && me.age become 33
+friend.firstName = 'Mike'; // friend.firstName && me.age firstName Mike
+console.log('me: ', me);
+console.log('friend: ', friend);
