@@ -77,10 +77,71 @@
 // DECLARE CONST VARIABLES AT THE TOP
 // DECLARE FUNCTIONS BEFORE USING THEM
 
-var x = 1;
-let y = 2;
-const z = 3;
+// var x = 1;
+// let y = 2;
+// const z = 3;
 
-console.log(x === window.x);
-console.log(y === window.y);
-console.log(z === window.z);
+// console.log(x === window.x);
+// console.log(y === window.y);
+// console.log(z === window.z);
+
+// // Using the THIS keyword
+
+// const jimmy = {
+//   name: 'Jimmy',
+//   year: 1991,
+//   calcAge: function () {
+//     return 2024 - this.year;
+//     // refers to object containing the function - Jimmy
+//   },
+// };
+
+// console.log(jimmy.calcAge());
+// jimmy.calcAge();
+
+// if (jimmy) {
+//   this.name = 'Colleen';
+//   const colleen = () => this.name;
+//   console.log(colleen()); // Arrow functions can only refer to outer (lexical) this keyword
+// }
+
+// console.log('Global: ', this);
+
+// const calcAge = function (birthYear) {
+//   console.log(2024 - birthYear);
+//   //   console.log('Function: ', this);
+//   // this is undefined since we are in strict mode and it's not inside of an object other than window
+// };
+
+// calcAge(1991); // undefined
+
+// const calcAgeArrow = birthYear => {
+//   console.log(2024 - birthYear);
+//   //   console.log('Function: ', this);
+//   // this window object since arrow functions don't have their own this keyword
+// };
+
+// calcAgeArrow(1991);
+
+// const jimmy = {
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this); // refers to the jimmy object
+//     console.log(2024 - this.year);
+//   },
+// };
+
+// jimmy.calcAge(); // 'this' refers to the object CALLING the function
+
+// const matilda = {
+//   year: 1996,
+// };
+
+// matilda.calcAge = jimmy.calcAge;
+// // method borrowing - matilda now has a calcAge property
+// matilda.calcAge();
+// console.log(matilda);
+
+// const f = jimmy.calcAge;
+
+// f(); // the 'this' keyword from the borrowed method points to undefined because there is no year in f function.
