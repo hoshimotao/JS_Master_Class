@@ -6,7 +6,7 @@ const flights =
 
 // Data needed for first part of the section
 const restaurant = {
-  name: 'Classico Italiano',
+  locationName: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
@@ -14,6 +14,18 @@ const restaurant = {
 
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  orderDelivery: function ({
+    time = '20:00',
+    address,
+    mainIndex = 0,
+    starterIndex = 1,
+  }) {
+    console.log(
+      `Order received at: ${time}. Your food will be delivered to ${address}. 
+      
+Your starter option is ${this.starterMenu[starterIndex]} and your main dish is ${this.mainMenu[mainIndex]}.`
+    );
   },
 
   openingHours: {
@@ -32,45 +44,98 @@ const restaurant = {
   },
 };
 
-// DESTRUCTURING ARRAYS
-const arr = [2, 3, 4];
-const [x, y, z] = arr; // BEWARE - [x,y,z] is not an array
-console.log(x, y, z);
-// they are variables being assigned to each value in the targeted array
-// 'arr'
+// DESTRUCTURING OBJECTS
+const { locationName, openingHours, categories } = restaurant;
 
-const family = ['Donna', 'Jim', 'Jamie'];
+const {
+  sat: { open, close },
+  fri: { open: friOpen, close: friClose },
+} = openingHours;
 
-const [dad, sister] = family;
+console.log(open, close, friOpen, friClose);
 
-console.log(dad, sister);
+restaurant.orderDelivery({
+  time: '22:30',
+  address: '321 Boca Raton Drive, FL',
+  starterIndex: 3,
+});
 
-let [main, , secondary] = restaurant.categories; // leave a blank space as a name to skip over that element
-console.log(main, secondary);
+restaurant.orderDelivery({
+  starterIndex: 2,
+  address: '123 Sunny Circle, FL',
+});
 
-main = 'Mexican'; // wont change original value of Italian! :)
-console.log(main, secondary);
-console.log(restaurant);
+// NESTED OBJECTS
 
-// OLD WAY OF DESTRUCTURING
-// const temp = main; // REPLACED
-// main = secondary; /// BY
-// secondary = temp; /// DESTRUCTURING
+// console.log(locationName, openingHours, categories);
+
+// const {
+//   locationName: restaurantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+
+// console.log(restaurantName, hours, tags);
+
+// // if menu doesnt exist, it becomes an empty array instead, starterMenu renamed to starters, and is an empty array if 'starterMenu' isnt found in restaurant | menu = [] to set default value, starterMenu: starters to create new variable with new name that refers to starterMenu in restaurant
+
+// // DEFAULT VALUES
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+
+// console.log(menu, starters);
+
+// // MUTATING VARIABLES
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+
+// ({ a, b } = obj);
+// // DESTRUCTURING ASSIGNMENT
+// // must be wrapped in parenthesis - otherwise JS expects a code block
+
+// console.log(a, b);
+
+// let brother = 'Jimmy';
+
+// // DESTRUCTURING ARRAYS
+// const arr = [2, 3, 4];
+// const [x, y, z] = arr; // BEWARE - [x,y,z] is not an array
+// console.log(x, y, z);
+// // they are variables being assigned to each value in the targeted array
+// // 'arr'
+
+// const family = ['Donna', 'Jim', 'Jamie'];
+
+// const [dad, sister] = family;
+
+// console.log(dad, sister);
+
+// let [main, , secondary] = restaurant.categories; // leave a blank space as a name to skip over that element
 // console.log(main, secondary);
 
-[main, secondary] = [secondary, main]; // WAY EASIER!
-console.log(main, secondary);
+// main = 'Mexican'; // wont change original value of Italian! :)
+// console.log(main, secondary);
+// console.log(restaurant);
 
-console.log(restaurant.order(2, 0));
-const [starterMeal, mainMeal] = restaurant.order(2, 0);
+// // OLD WAY OF DESTRUCTURING
+// // const temp = main; // REPLACED
+// // main = secondary; /// BY
+// // secondary = temp; /// DESTRUCTURING
+// // console.log(main, secondary);
 
-console.log(starterMeal, mainMeal);
+// [main, secondary] = [secondary, main]; // WAY EASIER!
+// console.log(main, secondary);
 
-// NESTED DESTRUCTURING
-const nestedArr = [1, 2, [4, 5]];
-const [one, , [four, five]] = nestedArr;
-console.log(one, four, five);
+// console.log(restaurant.order(2, 0));
+// const [starterMeal, mainMeal] = restaurant.order(2, 0);
 
-// DEFAULT VALUES FOR ARR LENGTH UNKNOWN
-const [p = 1, q = 1, r = 1] = [5, 6];
-console.log(p, q, r);
+// console.log(starterMeal, mainMeal);
+
+// // NESTED DESTRUCTURING
+// const nestedArr = [1, 2, [4, 5]];
+// const [one, , [four, five]] = nestedArr;
+// console.log(one, four, five);
+
+// // DEFAULT VALUES FOR ARR LENGTH UNKNOWN
+// const [p = 1, q = 1, r = 1] = [5, 6];
+// console.log(p, q, r);
