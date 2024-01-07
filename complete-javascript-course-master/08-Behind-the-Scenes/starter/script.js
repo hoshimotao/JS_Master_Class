@@ -193,19 +193,81 @@
 // addExpression(1, 2, 3, 4);
 // addArrow(1, 2, 3);
 
-let age = 30;
-let oldAge = age;
-age = 32;
-// console.log(age);
-// console.log(oldAge);
+// let age = 30;
+// let oldAge = age;
+// age = 32;
+// // console.log(age);
+// // console.log(oldAge);
 
-const me = {
-  firstName: 'Jimmy',
-  age: 32,
+// const me = {
+//   firstName: 'Jimmy',
+//   age: 32,
+// };
+
+// const friend = me; // points to same address in MEMORY HEAP so changing props on friend will change them for me as well
+// friend.age = 33; // friend.age && me.age become 33
+// friend.firstName = 'Mike'; // friend.firstName && me.age firstName Mike
+// console.log('me: ', me);
+// console.log('friend: ', friend);
+
+// Primitive variables can be reassigned to new values by saving their original to new variable
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+
+console.log(lastName, oldLastName);
+
+// Object references alter the original when assigning them to new variable
+const jess = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+console.log(jess);
+
+// marriedJess points to same address in heap as jess so any changes made to marriedJess also changes jess
+const marriedJess = jess; // jess becomes whatever marriedJess becomes
+
+console.log(marriedJess);
+marriedJess.age = 21; // jess age is also now 21
+console.log(jess);
+console.log(marriedJess);
+
+// Copying Objects
+
+const jess2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['john', 'jerry', 'jimmy'],
 };
 
-const friend = me; // points to same address in MEMORY HEAP so changing props on friend will change them for me as well
-friend.age = 33; // friend.age && me.age become 33
-friend.firstName = 'Mike'; // friend.firstName && me.age firstName Mike
-console.log('me: ', me);
-console.log('friend: ', friend);
+const jessCopy = Object.assign({}, jess2); // only creates a shallow copy not full clone
+
+jessCopy.age = 33;
+
+// cant manipulate an object within the object
+jessCopy.family.push('jordan'); // changes the original array of family
+
+console.log(jess2);
+console.log(jessCopy);
+
+const jimbo = {
+  age: 32,
+  family: ['Donna', 'Jim', 'Jamie'],
+  job: 'Developer',
+};
+
+const jimboCopy = Object.assign({}, jimbo);
+jimboCopy.job = 'Teacher';
+
+console.log(jimbo);
+console.log(jimboCopy);
+
+const john = Object.assign({}, jimboCopy);
+john.age = 43;
+console.log(john);
+
+const samantha = Object.assign({}, john);
+samantha.hobby = 'video games';
+console.log(samantha);
