@@ -50,17 +50,45 @@ const restaurant = {
   },
 };
 
+// const rest1 = {
+//   restName: 'Capri',
+//   numGuests: 0,
+// };
+// const rest2 = {
+//   restName: 'La Piazza',
+//   owner: 'Giovanni Rossi',
+// };
+
+// LONG WAY
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// OR USE THE LOGICAL ASSIGNMENT OPERATOR SHORTCUT
+// rest1.numGuests ||= 10; // rest1.numGuests is falsey "0" so it becomes 10
+// rest2.numGuests ??= 10;
+// // use nullish assignment operator instead to avoid errors <??>
+
+// console.log(rest1, rest2);
+
+// rest2.owner = rest2.owner && '<ANONYMOUS>'; // looking to stop at falsey
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+// console.log(rest2);
+
+// // rest1.owner = rest1.owner && '<ANONYMOUS>'; // owner: undefined
+// rest1.owner &&= '<ANONYMOUS>'; // owner doesnt even populate :)
+// console.log(rest1);
+
 ////////////////////////////////////////////////////////////////////
 // The Nullish Coalescing Operator (??)
 ////////////////////////////////////////////////////////////////////
 
-restaurant.numGuests = 0;
-const guests = restaurant.numGuests || 10;
-console.log(guests); // wrong answer (10)
+// restaurant.numGuests = 0;
+// const guests = restaurant.numGuests || 10;
+// console.log(guests); // wrong answer (10)
 
-// skips any nullish values and logs first non-nullish value
-const correctGuests = null ?? undefined ?? restaurant.numGuests ?? 10;
-console.log(correctGuests);
+// // skips any nullish values and logs first non-nullish value
+// const correctGuests = null ?? undefined ?? restaurant.numGuests ?? 10;
+// console.log(correctGuests);
 
 ////////////////////////////////////////////////////////////////////
 // SHORT CIRCUITING (&& and ||)
