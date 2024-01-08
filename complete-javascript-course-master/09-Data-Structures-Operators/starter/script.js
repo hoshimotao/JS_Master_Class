@@ -29,6 +29,11 @@ const restaurant = {
     console.log(`You ordered: ${ing1}, ${ing2}, and ${ing3}.`);
   },
 
+  orderPizza: function (mainIngredient, ...restOfOrder) {
+    console.log(`Main Ingredient: ${mainIngredient}`);
+    console.log(`Other Ingredients: ${restOfOrder}.`);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -44,6 +49,48 @@ const restaurant = {
     },
   },
 };
+
+////////////////////////////////////////////////////////////////////
+// SHORT CIRCUITING (&& and ||)
+////////////////////////////////////////////////////////////////////
+
+// ----------- OR ------------
+// console.log(3 || 'Jimmy'); // will log the first truthy value (3)
+// console.log('' || 'Jimmy'); // will log the first truthy value ('Jimmy')
+// console.log(true || 0); // true is first truthy option
+// console.log(null || undefined); // both are falsey - selects the OR option
+
+// const guests = restaurant.numGuests || 2;
+
+// console.log(guests);
+
+// ----------- AND ------------
+// // is looking for first falsey value to log
+// console.log(0 && 'Jimmy');
+// // Opposite of OR operator - logs 0 even tho tits falsey
+
+// console.log(true && false);
+// console.log(true && 7 && null && 'Jimmy');
+
+////////////////////////////////////////////////////////////////////
+// PRACTICAL EXAMPLE
+////////////////////////////////////////////////////////////////////
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('Mushrooms', 'Sausage', 'Spinach');
+// }
+
+// restaurant.orderPizza &&
+//   restaurant.orderPizza('Mushrooms', 'Sausage', 'Spinach');
+
+restaurant.openingHours.sun &&
+  restaurant.orderPizza('Mushrooms', 'Sausage', 'Spinach');
+// nothing happens because the restaurant is closed Sunday
+////////////////
+restaurant.openingHours.sat &&
+  restaurant.orderPizza('Mushrooms', 'Sausage', 'Spinach');
+// places an order since restaurant is open on Saturdays!
+
+////////////////////////////////////////////////////////////////////
 
 // const ingredients = [
 //   prompt('Ingredient 1?'),
@@ -86,12 +133,12 @@ const restaurant = {
 ////////////////////////////////////////////////////////////////////
 // SPREAD OPERATORS ON OBJECTS
 ////////////////////////////////////////////////////////////////////
-const newRestaurant = { ...restaurant, founder: 'James Thomas', founded: 1991 };
-// console.log(newRestaurant);
-const restaurantCopy = { ...restaurant };
-restaurantCopy.locationName = 'Pizza Time';
-console.log('Copy:', restaurantCopy.locationName);
-console.log('Original:', restaurant.locationName);
+// const newRestaurant = { ...restaurant, founder: 'James Thomas', founded: 1991 };
+// // console.log(newRestaurant);
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.locationName = 'Pizza Time';
+// console.log('Copy:', restaurantCopy.locationName);
+// console.log('Original:', restaurant.locationName);
 
 ////////////////////////////////////////////////////////////////////
 // DESTRUCTURING OBJECTS
@@ -190,3 +237,56 @@ console.log('Original:', restaurant.locationName);
 // // DEFAULT VALUES FOR ARR LENGTH UNKNOWN
 // const [p = 1, q = 1, r = 1] = [5, 6];
 // console.log(p, q, r);
+
+////////////////////////////////////////////////////////////////////
+// REST PATTERNS AND PARAMS
+////////////////////////////////////////////////////////////////////
+
+// USE CASES - SPREAD OPERATOR - UNPACKING
+// const arr = [1, 2, ...[3, 4]];
+// console.log(arr);
+
+// REST PATTERN - PACKING - TAKES THE 'REST' OF THE ARRAY AND PUTS THEM IN NEW ARRAY CALLED OTHERS
+// const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
+// console.log(a, b, others); // OUTPUT: 1 2 [3,4,5,6]
+// console.log(a, b, ...others); // OUTPUT: 1 2 3 4 5 6
+
+// NOTE: ALWAYS MAKE SURE THE REST PATTERN IS USED LAST TO SCOOP UP REMAINING ELEMENTS
+
+////////////////////////////////////////////////////////////////////
+// DESTRUCTURING CONTINUED
+////////////////////////////////////////////////////////////////////
+
+// ...otherFood is a bucket with everything else thats not a named variable
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+
+// // console.log(pizza, risotto, ...otherFood);
+
+// const { sat, ...weekdays } = restaurant.openingHours;
+// // console.log(weekdays);
+
+// ////////////////////////////////////////////////////////////////////
+// // DESTRUCTURING WITH FUNCTIONS
+// ////////////////////////////////////////////////////////////////////
+
+// // REST ARGUMENTS - Condense big array arguments into '...numbers'
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   console.log(sum);
+// };
+
+// add(2, 3);
+// add(5, 7, 1, 2);
+
+// const x = [1, 2, 4, 5];
+// const y = [10, 20, 30];
+// add(...x, ...y); // == 72 submits 2 iterable array to the function 'add'
+// add(1, 2, 4, 5, 10, 20, 30); // == 72 same result
+
+// restaurant.orderPizza('Cheese', ' Pepperoni', ' Sausage');
