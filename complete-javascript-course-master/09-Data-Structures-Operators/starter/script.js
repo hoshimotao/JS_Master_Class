@@ -22,10 +22,11 @@ const restaurant = {
     starterIndex = 1,
   }) {
     console.log(
-      `Order received at: ${time}. Your food will be delivered to ${address}. 
-      
-Your starter option is ${this.starterMenu[starterIndex]} and your main dish is ${this.mainMenu[mainIndex]}.`
+      `Order received at: ${time}. Your food will be delivered to ${address}. Your starter option is ${this.starterMenu[starterIndex]} and your main dish is ${this.mainMenu[mainIndex]}.`
     );
+  },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`You ordered: ${ing1}, ${ing2}, and ${ing3}.`);
   },
 
   openingHours: {
@@ -44,26 +45,76 @@ Your starter option is ${this.starterMenu[starterIndex]} and your main dish is $
   },
 };
 
+// const ingredients = [
+//   prompt('Ingredient 1?'),
+//   prompt('Ingredient 2?'),
+//   prompt('Ingredient 3?'),
+// ];
+// restaurant.orderPasta(...ingredients); //You ordered: Garlic, Onion, and Butter.
+
+// SPREAD OPERATORS ON ARRAYS
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; // [1,2,7,8,9]
+// console.log(badNewArr);
+
+// const newArr = [1, 2, ...arr]; // [1,2,7,8,9]
+// console.log(newArr);
+
+// const newRestaurant = [...restaurant.categories, ...restaurant.mainMenu];
+
+// console.log(newRestaurant);
+// console.log(...newRestaurant);
+
+// const newMenu = [...restaurant.mainMenu, 'Spinach Pasta'];
+// console.log(newMenu);
+
+// // COPY ARRAY
+// const mainMenuCopy = [...restaurant.mainMenu];
+
+// const fullMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(fullMenu); // array of all menu items combined
+// console.log(...fullMenu); // a list of all menu items as strings
+
+// Spread operator works on ARRAYS and STRINGS alike
+
+// const str = 'James';
+// const letters = [...str, ' ', 'T.'];
+// console.log(letters);
+// console.log(...str);
+// console.log(`${[...str]} is awesome`); // 'J,a,m,e,s is awesome'
+
+////////////////////////////////////////////////////////////////////
+// SPREAD OPERATORS ON OBJECTS
+////////////////////////////////////////////////////////////////////
+const newRestaurant = { ...restaurant, founder: 'James Thomas', founded: 1991 };
+// console.log(newRestaurant);
+const restaurantCopy = { ...restaurant };
+restaurantCopy.locationName = 'Pizza Time';
+console.log('Copy:', restaurantCopy.locationName);
+console.log('Original:', restaurant.locationName);
+
+////////////////////////////////////////////////////////////////////
 // DESTRUCTURING OBJECTS
-const { locationName, openingHours, categories } = restaurant;
+////////////////////////////////////////////////////////////////////
+// const { locationName, openingHours, categories } = restaurant;
 
-const {
-  sat: { open, close },
-  fri: { open: friOpen, close: friClose },
-} = openingHours;
+// const {
+//   sat: { open, close },
+//   fri: { open: friOpen, close: friClose },
+// } = openingHours;
 
-console.log(open, close, friOpen, friClose);
+// console.log(open, close, friOpen, friClose);
 
-restaurant.orderDelivery({
-  time: '22:30',
-  address: '321 Boca Raton Drive, FL',
-  starterIndex: 3,
-});
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: '321 Boca Raton Drive, FL',
+//   starterIndex: 3,
+// });
 
-restaurant.orderDelivery({
-  starterIndex: 2,
-  address: '123 Sunny Circle, FL',
-});
+// restaurant.orderDelivery({
+//   starterIndex: 2,
+//   address: '123 Sunny Circle, FL',
+// });
 
 // NESTED OBJECTS
 
