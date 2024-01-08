@@ -51,6 +51,18 @@ const restaurant = {
 };
 
 ////////////////////////////////////////////////////////////////////
+// The Nullish Coalescing Operator (??)
+////////////////////////////////////////////////////////////////////
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests); // wrong answer (10)
+
+// skips any nullish values and logs first non-nullish value
+const correctGuests = null ?? undefined ?? restaurant.numGuests ?? 10;
+console.log(correctGuests);
+
+////////////////////////////////////////////////////////////////////
 // SHORT CIRCUITING (&& and ||)
 ////////////////////////////////////////////////////////////////////
 
@@ -82,12 +94,12 @@ const restaurant = {
 // restaurant.orderPizza &&
 //   restaurant.orderPizza('Mushrooms', 'Sausage', 'Spinach');
 
-restaurant.openingHours.sun &&
-  restaurant.orderPizza('Mushrooms', 'Sausage', 'Spinach');
-// nothing happens because the restaurant is closed Sunday
-////////////////
-restaurant.openingHours.sat &&
-  restaurant.orderPizza('Mushrooms', 'Sausage', 'Spinach');
+// restaurant.openingHours.sun &&
+//   restaurant.orderPizza('Mushrooms', 'Sausage', 'Spinach');
+// // nothing happens because the restaurant is closed Sunday
+// ////////////////
+// restaurant.openingHours.sat &&
+//   restaurant.orderPizza('Mushrooms', 'Sausage', 'Spinach');
 // places an order since restaurant is open on Saturdays!
 
 ////////////////////////////////////////////////////////////////////
