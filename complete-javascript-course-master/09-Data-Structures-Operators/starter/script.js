@@ -50,6 +50,30 @@ const restaurant = {
   },
 };
 
+// ////////////////////////////////////////////////////////////////////
+// // FOR OF LOOPS
+// ////////////////////////////////////////////////////////////////////
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// for (const foodItem of menu) {
+//   console.log(foodItem);
+// }
+// console.log(menu.length);
+
+// for (const foodItem of menu.entries()) {
+//   const [key, value] = [...menu.entries()];
+//   // console.log(`key: ${key[0]}, value: ${value[1]}`); // old way
+//   console.log(`${foodItem[0] + 1}: ${foodItem[1]}`); // old way
+// }
+
+// better way
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log([...menu.entries()]);
+
 // const rest1 = {
 //   restName: 'Capri',
 //   numGuests: 0,
