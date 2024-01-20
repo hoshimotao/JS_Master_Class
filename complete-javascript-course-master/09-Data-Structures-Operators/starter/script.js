@@ -67,11 +67,11 @@ const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 for (const day of days) {
   // console.log(day);
   const open = restaurant.openingHours[day]?.open ?? 'closed';
-  console.log(`On ${day} the restaurant is open at ${open}`);
+  //console.log(`On ${day} the restaurant is open at ${open}`);
 }
 
 // METHODS
-console.log(restaurant.orter?.(0, 1) ?? 'Method does not exist');
+//console.log(restaurant.orter?.(0, 1) ?? 'Method does not exist');
 
 // ON ARRAYS
 const users = [
@@ -79,17 +79,55 @@ const users = [
   { name: 'Colleen', email: '456@gmail.com', age: 22 },
 ];
 // using optional chaining :)
-console.log(users[0]?.name ?? 'Users array is empty');
+//console.log(users[0]?.name ?? 'Users array is empty');
 // old way
 if (users.length > 0) {
-  console.log(users[0].name);
+  //console.log(users[0].name);
 } else {
-  console.log('Users array is empty');
+  //console.log('Users array is empty');
 }
 
-// ////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////
+// // LOOPING OBJECTS - OBJ KEYS, VALUES, AND ENTRIES
+// ///////////////////////////////////////////////////////////
+
+// CHEAT SHEET
+// Object.keys(objectName) = actual key name ('Monday')
+// Object.values = that day's opening hours
+// ({open: 12, close: 22})
+// Object.entries = all key value pairs inside openingHours
+// example:['monday', {open: 12, close: 22}]
+
+// Property KEYS
+const properties = Object.keys(openingHours);
+// console.log(properties);
+
+let openStr = `the restaurant is open ${properties.length} days: `;
+for (const day of properties) {
+  openStr += `${day}, `;
+  // adds the day to the end of the string - thu fri sat
+}
+
+//console.log(openStr);
+
+// Property VALUES
+const values = Object.values(openingHours);
+//console.log(values);
+
+// Entire Object - ENTRIES
+
+const entries = Object.entries(openingHours);
+//console.log(entries);
+
+// [key, value] - value can be destructured into whats inside
+// {open, close}
+for (const [day, { open, close }] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
+
+// ///////////////////////////////////////////////////////////
 // // FOR OF LOOPS
-// ////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////
 
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
