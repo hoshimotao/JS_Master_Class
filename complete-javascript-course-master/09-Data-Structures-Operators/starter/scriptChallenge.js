@@ -1,3 +1,5 @@
+'use strict';
+
 // 1) Create a player array for each team
 // 2) 1st player in player arrays is goalie
 
