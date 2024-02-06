@@ -121,9 +121,9 @@ const entries = Object.entries(openingHours);
 
 // [key, value] - value can be destructured into whats inside
 // {open, close}
-for (const [day, { open, close }] of entries) {
-  console.log(`On ${day} we open at ${open} and close at ${close}`);
-}
+// for (const [day, { open, close }] of entries) {
+//   console.log(`On ${day} we open at ${open} and close at ${close}`);
+// }
 
 // ///////////////////////////////////////////////////////////
 // // FOR OF LOOPS
@@ -429,3 +429,49 @@ for (const [i, el] of menu.entries()) {
 // add(1, 2, 4, 5, 10, 20, 30); // == 72 same result
 
 // restaurant.orderPizza('Cheese', ' Pepperoni', ' Sausage');
+
+////////////////
+// SETS
+///////////////
+
+// ***** CANNOT RETRIEVE DATA ELEMENTS FROM SETS - USE ARRAYS
+// ***** ELEMENTS IN SETS CANNOT BE TARGETED
+
+// creates a set of unique elements and removes dupes
+// pass in an iterable - such as an Array
+const orderSet = new Set(['Pasta', 'Risotto', 'Pizza', 'Pasta']);
+// {'Pasta', 'Risotto', 'Salad', 'Pizza'}
+// Also works with mixed data types like numbers, strings
+console.log(new Set('Jimmy'));
+
+console.log(orderSet);
+console.log(orderSet.size); // contains 3 unique elements
+
+// check if an element exists in the set
+console.log(orderSet.has('Pasta')); // true
+console.log(orderSet.has('Jimmy')); // false
+
+orderSet.add('Salad'); // adds salad to orderSet
+console.log(orderSet); // {'Pasta', 'Risotto', 'Pizza', 'Salad'}
+orderSet.delete('Pizza');
+console.log(orderSet);
+// orderSet.clear(); // deletes all elements in set
+console.log(orderSet);
+
+// LOOP OVER SETS USING FOR OF LOOP
+for (const order of orderSet) {
+  console.log(order);
+}
+
+// Creating a Set from an array with duplicates - most common use
+const staff = ['Waiter', 'Chef', 'Hostess', 'Manager', 'Waiter', 'Chef'];
+
+// const staffSet = new Set(staff);
+// creates ---> {'Waiter', 'Chef', 'Hostess', 'Manager'}
+
+const staffSet = [...new Set(staff)]; // destructure iterable Set into array
+console.log(staffSet); // ['Waiter', 'Chef', 'Hostess', 'Manager']
+console.log(new Set(staff).size); // 4 different roles in restaurant
+console.log(new Set('JimmyThomas').size); // 9 unique letters
+
+// ***** IF ORDER IS IMPORTANT - USE ARRAYS
