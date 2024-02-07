@@ -439,39 +439,93 @@ for (const [i, el] of menu.entries()) {
 
 // creates a set of unique elements and removes dupes
 // pass in an iterable - such as an Array
-const orderSet = new Set(['Pasta', 'Risotto', 'Pizza', 'Pasta']);
-// {'Pasta', 'Risotto', 'Salad', 'Pizza'}
-// Also works with mixed data types like numbers, strings
-console.log(new Set('Jimmy'));
+// const orderSet = new Set(['Pasta', 'Risotto', 'Pizza', 'Pasta']);
+// // {'Pasta', 'Risotto', 'Salad', 'Pizza'}
+// // Also works with mixed data types like numbers, strings
+// console.log(new Set('Jimmy'));
 
-console.log(orderSet);
-console.log(orderSet.size); // contains 3 unique elements
+// console.log(orderSet);
+// console.log(orderSet.size); // contains 3 unique elements
 
-// check if an element exists in the set
-console.log(orderSet.has('Pasta')); // true
-console.log(orderSet.has('Jimmy')); // false
+// // check if an element exists in the set
+// console.log(orderSet.has('Pasta')); // true
+// console.log(orderSet.has('Jimmy')); // false
 
-orderSet.add('Salad'); // adds salad to orderSet
-console.log(orderSet); // {'Pasta', 'Risotto', 'Pizza', 'Salad'}
-orderSet.delete('Pizza');
-console.log(orderSet);
-// orderSet.clear(); // deletes all elements in set
-console.log(orderSet);
+// orderSet.add('Salad'); // adds salad to orderSet
+// console.log(orderSet); // {'Pasta', 'Risotto', 'Pizza', 'Salad'}
+// orderSet.delete('Pizza');
+// console.log(orderSet);
+// // orderSet.clear(); // deletes all elements in set
+// console.log(orderSet);
 
 // LOOP OVER SETS USING FOR OF LOOP
-for (const order of orderSet) {
-  console.log(order);
-}
+// for (const order of orderSet) {
+//   console.log(order);
+// }
 
-// Creating a Set from an array with duplicates - most common use
-const staff = ['Waiter', 'Chef', 'Hostess', 'Manager', 'Waiter', 'Chef'];
+// // Creating a Set from an array with duplicates - most common use
+// const staff = ['Waiter', 'Chef', 'Hostess', 'Manager', 'Waiter', 'Chef'];
 
-// const staffSet = new Set(staff);
-// creates ---> {'Waiter', 'Chef', 'Hostess', 'Manager'}
+// // const staffSet = new Set(staff);
+// // creates ---> {'Waiter', 'Chef', 'Hostess', 'Manager'}
 
-const staffSet = [...new Set(staff)]; // destructure iterable Set into array
-console.log(staffSet); // ['Waiter', 'Chef', 'Hostess', 'Manager']
-console.log(new Set(staff).size); // 4 different roles in restaurant
-console.log(new Set('JimmyThomas').size); // 9 unique letters
+// const staffSet = [...new Set(staff)]; // destructure iterable Set into array
+// console.log(staffSet); // ['Waiter', 'Chef', 'Hostess', 'Manager']
+// console.log(new Set(staff).size); // 4 different roles in restaurant
+// console.log(new Set('JimmyThomas').size); // 9 unique letters
 
 // ***** IF ORDER IS IMPORTANT - USE ARRAYS
+
+////////////////
+// MAPS
+////////////////
+// Define a callback function
+// function square(x) {
+//   return x ** 2;
+// }
+
+// // Create an array
+// const numbers = [1, 2, 3, 4, 5];
+
+// // Apply the square function to each element of the array using map()
+// const squaredNumbers = numbers.map(square);
+
+// console.log(squaredNumbers); // Output: [1, 4, 9, 16, 25]
+
+const rest = new Map(); // You typically start with empty Map
+// console.log(new Map().set(true, 'hey')); // random new map object
+
+// SET METHOD
+rest
+  .set('name', 'classico Italiano')
+  .set(1, 'Boca, FL')
+  .set('categories', ['Italian', 'Vegetarian', 'Keto'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open!')
+  .set(false, 'We are closed!');
+
+// GET METHOD
+console.log(rest.get('name')); // Input = key, Output = val
+console.log(rest.get('Boca, FL')); // Input = val, Output = undefined
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// HAS METHOD
+console.log(rest.has('name')); // name is a key - true
+console.log(rest.has('joe')); // joe is not a key - false
+
+// DELETE METHOD
+rest.delete('name');
+console.log(rest.has('name')); // key 'name' has been removed
+console.log(rest.size); // 6 key value pairs now
+rest.clear();
+console.log(rest); // empty Map object called rest
+
+// WITH ARRAYS AS KEYS
+const someArr = [1, 2];
+rest.set(someArr, 'TEST');
+console.log(rest.get(someArr));
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest.get(document.querySelector('h1')));
+console.log(rest);
