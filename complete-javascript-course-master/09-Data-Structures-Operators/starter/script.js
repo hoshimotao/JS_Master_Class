@@ -531,16 +531,16 @@ for (const [i, el] of menu.entries()) {
 // console.log(rest);
 
 // More effective way to set key value pairs in a Map object
-const question = new Map([
-  ['question', 'What is the best coding language in the world?'],
-  [1, 'C'],
-  [2, 'Java'],
-  [3, 'Python'],
-  [4, 'Javascript'],
-  ['correct', 4],
-  [true, 'Correct!'],
-  [false, 'Incorrect, please try again.'],
-]);
+// const question = new Map([
+//   ['question', 'What is the best coding language in the world?'],
+//   [1, 'C'],
+//   [2, 'Java'],
+//   [3, 'Python'],
+//   [4, 'Javascript'],
+//   ['correct', 4],
+//   [true, 'Correct!'],
+//   [false, 'Incorrect, please try again.'],
+// ]);
 
 // console.log(question);
 
@@ -569,7 +569,17 @@ const hoursMap = new Map(Object.entries(openingHours));
 // Convert Map back into an Array
 
 // console.log(question);
-console.log([...question]);
-// console.log([...question.entries()]); same as ...question
-console.log([...question.keys()]);
-console.log([...question.values()]);
+// console.log([...question]);
+// // console.log([...question.entries()]); same as ...question
+// console.log([...question.keys()]);
+// console.log([...question.values()]);
+
+// Which Data Structure to Use? Arrays, Sets, Objects, Maps
+// ARRAYS = use when you need ORDERED list of values (allows duplicates)
+// use when you need to MANIPULATE data
+
+// SETS = Use when you need to work with UNIQUE values / HIGH PERFORMANCE is very important / REMOVE DUPLICATES from arrays
+
+// OBJECTS = More traditional key/value store ('typically overused when not necessary') / Easier to write and access values with '.' and [] / use when you need to include functions (methods) in object / when working with JSON (can convert to Map)
+
+// MAPS = Better performance than objects / keys can have ANY data type / easy to iterate / Easy to compute size (mapVariableName.size) / when you simply need to map keys to values / when you need keys that are NOT strings
