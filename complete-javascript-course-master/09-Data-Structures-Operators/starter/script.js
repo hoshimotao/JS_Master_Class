@@ -492,40 +492,84 @@ for (const [i, el] of menu.entries()) {
 
 // console.log(squaredNumbers); // Output: [1, 4, 9, 16, 25]
 
-const rest = new Map(); // You typically start with empty Map
-// console.log(new Map().set(true, 'hey')); // random new map object
+// const rest = new Map(); // You typically start with empty Map
+// // console.log(new Map().set(true, 'hey')); // random new map object
 
-// SET METHOD
-rest
-  .set('name', 'classico Italiano')
-  .set(1, 'Boca, FL')
-  .set('categories', ['Italian', 'Vegetarian', 'Keto'])
-  .set('open', 11)
-  .set('close', 23)
-  .set(true, 'We are open!')
-  .set(false, 'We are closed!');
+// // SET METHOD
+// rest
+//   .set('name', 'classico Italiano')
+//   .set(1, 'Boca, FL')
+//   .set('categories', ['Italian', 'Vegetarian', 'Keto'])
+//   .set('open', 11)
+//   .set('close', 23)
+//   .set(true, 'We are open!')
+//   .set(false, 'We are closed!');
 
-// GET METHOD
-console.log(rest.get('name')); // Input = key, Output = val
-console.log(rest.get('Boca, FL')); // Input = val, Output = undefined
-const time = 21;
-console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+// // GET METHOD
+// console.log(rest.get('name')); // Input = key, Output = val
+// console.log(rest.get('Boca, FL')); // Input = val, Output = undefined
+// const time = 21;
+// console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
 
-// HAS METHOD
-console.log(rest.has('name')); // name is a key - true
-console.log(rest.has('joe')); // joe is not a key - false
+// // HAS METHOD
+// console.log(rest.has('name')); // name is a key - true
+// console.log(rest.has('joe')); // joe is not a key - false
 
-// DELETE METHOD
-rest.delete('name');
-console.log(rest.has('name')); // key 'name' has been removed
-console.log(rest.size); // 6 key value pairs now
-rest.clear();
-console.log(rest); // empty Map object called rest
+// // DELETE METHOD
+// rest.delete('name');
+// console.log(rest.has('name')); // key 'name' has been removed
+// console.log(rest.size); // 6 key value pairs now
+// rest.clear();
+// console.log(rest); // empty Map object called rest
 
-// WITH ARRAYS AS KEYS
-const someArr = [1, 2];
-rest.set(someArr, 'TEST');
-console.log(rest.get(someArr));
-rest.set(document.querySelector('h1'), 'Heading');
-console.log(rest.get(document.querySelector('h1')));
-console.log(rest);
+// // WITH ARRAYS AS KEYS
+// const someArr = [1, 2];
+// rest.set(someArr, 'TEST');
+// console.log(rest.get(someArr));
+// rest.set(document.querySelector('h1'), 'Heading');
+// console.log(rest.get(document.querySelector('h1')));
+// console.log(rest);
+
+// More effective way to set key value pairs in a Map object
+const question = new Map([
+  ['question', 'What is the best coding language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'Python'],
+  [4, 'Javascript'],
+  ['correct', 4],
+  [true, 'Correct!'],
+  [false, 'Incorrect, please try again.'],
+]);
+
+// console.log(question);
+
+// Convert object to map
+// console.log(Object.entries(openingHours)); // looks similar to map
+const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
+// MAPS ARE ALSO ITERABLE!! Can use for loops and for of loops on them!
+
+// QUIZ APP PRACTICE
+// console.log(question.get('question'));
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') {
+//     console.log(`Answer ${key}: ${value}`);
+//   }
+// }
+
+// const answer = Number(prompt('Your answer'));
+// console.log(question.get(question.get('correct') === answer));
+// becomes one of the following
+// question.get(true) or question.get(false)
+// based on user's input
+// therefore fetching the true key --> 'Correct!'
+// or the false key --> 'Incorrect, please try again.'
+
+// Convert Map back into an Array
+
+// console.log(question);
+console.log([...question]);
+// console.log([...question.entries()]); same as ...question
+console.log([...question.keys()]);
+console.log([...question.values()]);
