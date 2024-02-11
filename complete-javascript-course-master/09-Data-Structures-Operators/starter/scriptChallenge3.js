@@ -1,3 +1,5 @@
+'use strict';
+
 /*
 we have a map with a log of the events at a soccer game.
 The values are the events themselves.
